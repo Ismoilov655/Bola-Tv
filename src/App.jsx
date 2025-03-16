@@ -2,6 +2,7 @@ import React from 'react'
 
 // rrd
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router'
+import { DataProvider } from './DataContext'
 
 // pages
 import Home from './pages/Home'
@@ -23,8 +24,8 @@ const App = () => {
         <Route path='/ertaklar' element={<Ertaklar />} />
         <Route path='/multfilm' element={<Multfilm />} />
         <Route path="/qo'shiqlar" element={<Qoshiqlar />} />
-        <Route path='/qiziqarli matematika' element={<QiziqarliMatematika />} />
-        <Route path='/ingliz tili' element={<InglizTili/>} />
+        <Route path='/matematika' element={<QiziqarliMatematika />} />
+        <Route path='/ingliztili' element={<InglizTili/>} />
         <Route path='/badantarbiya' element={<Badantarbiya/>} />
         <Route path='/rasm' element={<Rasm/>} />
         <Route path='/murojaat' element={<Murojaat />} />
@@ -32,7 +33,9 @@ const App = () => {
     )
   )
   return (
-    <RouterProvider router={routes} />
+    <DataProvider>
+      <RouterProvider router={routes} />
+    </DataProvider>
   )
 }
 
