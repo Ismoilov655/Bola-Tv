@@ -569,7 +569,7 @@ export const malumot = {
         "id": 5,
         "title": "Ferdinand",
         "image": "https://i.ytimg.com/vi/7B8oEjl4rUk/hq720.jpg",
-        "language": "uz",
+        "language": "ru",
         "videoUrl": "https://www.youtube.com/embed/0S4Jo1tYtJc?playlist=0S4Jo1tYtJc&loop=1"
       }
     ]

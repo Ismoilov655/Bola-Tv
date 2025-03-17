@@ -48,7 +48,7 @@ const Murojaat = () => {
     };
 
     return (
-        <main className='pb-16 md:py-10'>
+        <main className='pb-16'>
             <div className='mb-10'>
                 <div className='relative w-full'>
                     <img className='w-full h-36 md:h-56' src={hero} alt="" />
@@ -72,7 +72,7 @@ const Murojaat = () => {
                         <div className="flex sm:flex-row sm:space-x-3 mb-3">
                             <input
                                 className="w-full p-3 rounded-lg border-2 border-gray-300 focus:ring-2 inline-block mr-2 focus:ring-blue-500"
-                                required
+                               
                                 placeholder="Ismingiz"
                                 type="text"
                                 value={ism}
@@ -92,7 +92,7 @@ const Murojaat = () => {
 
                         <input
                             className="w-full p-3 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-blue-500 mb-3"
-                            required
+                            
                             placeholder="Telegram user"
                             type="text"
                             value={tgUser}
@@ -101,7 +101,6 @@ const Murojaat = () => {
                         <textarea
                             className="w-full resize-none min-h-40 p-2 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-blue-500"
                             placeholder="Taklif va fikrlar"
-                            required
                             value={fikr}
                             onChange={(e) => setFikr(e.target.value)}
                             onKeyDown={(e) => {

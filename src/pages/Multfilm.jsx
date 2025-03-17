@@ -8,7 +8,7 @@ import multic from '../img/multic-page.jpg'
 const Multfilm = () => {
 
     return (
-        <main className='bg-gradient-to-b from-white to-green-100 pb-16 md:py-10'>
+        <main className='bg-gradient-to-b from-white to-green-100 pb-16'>
             <div className='mb-5'>
                 <div className='relative w-full'>
                     <img className='w-full h-36 md:h-56' src={multic} alt="" />

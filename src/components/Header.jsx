@@ -20,9 +20,9 @@ const Header = () => {
 
   useEffect(() => {
     if (open) {
-      document.body.style.overflow = "hidden"; 
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"; 
+      document.body.style.overflow = "auto";
     }
 
     return () => {
@@ -34,30 +34,16 @@ const Header = () => {
 
     <header className="bg-gradient-to-r from-[#FAEDDD] to-[#DBF0FB] py-7 md:pb-14">
       {/* modal */}
+      
 
-      <Drawer open={open} onClose={closeDrawer} className="p-4">
+      <Drawer open={open} onClose={closeDrawer} className="p-4 w-48 ">
         <div className="flex justify-end">
-          <IconButton className='' variant="text" color="blue-gray" onClick={closeDrawer}>
-            <svg
-              xmlns={closeIcon}
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="h-5 w-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </IconButton>
+       <button className='w-7' onClick={closeDrawer}><img src={closeIcon} alt="" /></button>   
         </div>
 
         <div>
-        <div className="mb-6 flex items-center justify-between">
-            <Link className="text-green-500 font-serif font-bold text-2xl sm:text-3xl" to="/">
+          <div className="mb-6 flex items-center justify-between">
+            <Link className="text-green-500 font-serif font-bold text-3xl sm:text-2xl" to="/">
               Bola tv
             </Link>
           </div>
@@ -74,22 +60,28 @@ const Header = () => {
               { to: "/rasm", label: "Rasm" },
               { to: "/murojaat", label: "Murojaat" },
             ].map((item) => (
-              <NavLink key={item.to} onClick={closeDrawer} className="text-lg font-medium block px-2 py-2 rounded transition-all duration-300" to={item.to}>
+              <NavLink
+                key={item.to}
+                onClick={closeDrawer}
+                className="text-lg font-medium  block px-2 py-2 rounded transition-all duration-300 underline-offset-2"
+                to={item.to}
+              >
                 {item.label}
               </NavLink>
             ))}
           </nav>
 
-          <Link className="inline-flex bg-blue-200 px-5 py-2 rounded-md transition-all duration-40 hover:bg-green-300" to="https://t.me/bolatvuz" target="_blank"
-            rel="noopener noreferrer" >
+          <Link
+            className="inline-flex bg-blue-200 px-5 py-2 rounded-md transition-all duration-40 hover:bg-green-300 underline"
+            to="https://t.me/bolatvuz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img className="w-5 mr-3" src={telegram} alt="Telegram logo" />
             Obuna bo'lish
           </Link>
         </div>
-
       </Drawer>
-
-      
 
       <div className="w-full max-w-7xl mx-auto px-5">
 
@@ -104,7 +96,7 @@ const Header = () => {
           </Link>
 
           <button
-            className="inline-block active:opacity-60 focus:outline-none md:hidden "
+            className="inline-block w-10 active:opacity-60 focus:outline-none md:hidden "
             onClick={openDrawer}
           >
             <img src={menu} alt="menu" />
