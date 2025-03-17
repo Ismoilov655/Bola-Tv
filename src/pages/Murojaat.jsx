@@ -6,7 +6,7 @@ const Murojaat = () => {
     const [tel, setTel] = useState("");
     const [tgUser, setTgUser] = useState("");
     const [fikr, setFikr] = useState("");
-    const [xabar, setXabar] = useState(""); // Xabar holati
+    const [xabar, setXabar] = useState("");
 
     const botToken = "8051280711:AAHQUquacleKKN9Pjrm5ADhiY9TU8meKaME";
     const chatId = "-1002681437689";
@@ -14,7 +14,7 @@ const Murojaat = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!ism.trim() || !tel.trim() || !tgUser.trim() || !fikr.trim()) {
+        if (ism.trim() || !tel.trim() || tgUser.trim() || !fikr.trim()) {
             setXabar("Iltimos barcha maydonlarni toldiring")
             return;
             };
@@ -34,16 +34,13 @@ const Murojaat = () => {
             })
         });
 
-        // Xabar chiqarish
         setXabar("✅ Sizning sharhingiz qabul qilindi!");
 
-        // Formani tozalash
         setIsm("");
         setTel("");
         setTgUser("");
         setFikr("");
 
-        // Xabarni 3 soniyadan keyin o‘chirish
         setTimeout(() => setXabar(""), 3000);
     };
 
@@ -83,7 +80,7 @@ const Murojaat = () => {
                                 className="w-full p-3 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-blue-500"
                                 required
                                 pattern="(\+998|8)[\- ]?\d{2}[\- ]?\d{3}[\- ]?\d{2}[\- ]?\d{2}"
-                                placeholder="Telefon raqamingiz"
+                                placeholder="+998 va Telefon raqamingiz"
                                 type="text"
                                 value={tel}
                                 onChange={(e) => setTel(e.target.value)}

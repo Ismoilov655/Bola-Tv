@@ -35,10 +35,11 @@ const Header = () => {
     <header className="bg-gradient-to-r from-[#FAEDDD] to-[#DBF0FB] py-7 md:pb-14">
       {/* modal */}
       
+      <div>
 
-      <Drawer open={open} onClose={closeDrawer} className="p-4 w-48 ">
+      <Drawer open={open} onClose={closeDrawer} className="p-4 w-56 ">
         <div className="flex justify-end">
-       <button className='w-7' onClick={closeDrawer}><img src={closeIcon} alt="" /></button>   
+       <button className='w-7' onClick={closeDrawer}><img src={closeIcon} alt="closeicon" /></button>   
         </div>
 
         <div>
@@ -82,6 +83,7 @@ const Header = () => {
           </Link>
         </div>
       </Drawer>
+      </div>
 
       <div className="w-full max-w-7xl mx-auto px-5">
 
