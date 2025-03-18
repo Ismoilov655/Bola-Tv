@@ -14,9 +14,8 @@ const Murojaat = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (ism.trim() || !tel.trim() || tgUser.trim() || !fikr.trim()) {
-            setXabar("Iltimos barcha maydonlarni toldiring")
-            return;
+        if (!ism.trim() || !tel.trim() || tgUser.trim() || fikr.trim()) {
+            setXabar("Iltimos barcha maydonlarni toldiring")   
             };
             
 
@@ -56,7 +55,6 @@ const Murojaat = () => {
             <section className='w-full max-w-7xl mx-auto px-5'>
                 <h2 className='text-2xl mb-7 font-bold text-red-800'>Taklif va fikrlar</h2>
 
-                {/* Xabar ekranda chiqadi */}
                 {xabar && (
                     <div className="bg-green-500 text-white text-center transition-all p-3 rounded-lg mb-5">
                         {xabar}
@@ -98,6 +96,7 @@ const Murojaat = () => {
                         <textarea
                             className="w-full resize-none min-h-40 p-2 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-blue-500"
                             placeholder="Taklif va fikrlar"
+                            required
                             value={fikr}
                             onChange={(e) => setFikr(e.target.value)}
                             onKeyDown={(e) => {

@@ -6,7 +6,7 @@ import InputSelekt from '../components/InputSelekt'
 
 const Badantarbiya = () => {
     return (
-        <main className='bg-gradient-to-b from-white to-green-100 pb-16 '>
+        <main className='bg-gradient-to-b from-white to-green-50 pb-16 '>
             
             <div className='w-full mb-5 '>
                 <div className='relative w-full '>

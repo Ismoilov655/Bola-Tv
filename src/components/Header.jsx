@@ -98,7 +98,7 @@ const Header = () => {
           </Link>
 
           <button
-            className="inline-block w-10 active:opacity-60 focus:outline-none md:hidden "
+            className="inline-block w-11 active:opacity-60 focus:outline-none md:hidden "
             onClick={openDrawer}
           >
             <img src={menu} alt="menu" />
