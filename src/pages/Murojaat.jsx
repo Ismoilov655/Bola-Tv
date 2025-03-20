@@ -3,46 +3,66 @@ import hero from '../img/hero.jpg';
 
 const Murojaat = () => {
     const [ism, setIsm] = useState("");
-    const [tel, setTel] = useState("");
     const [tgUser, setTgUser] = useState("");
     const [fikr, setFikr] = useState("");
+    const [phone, setPhone] = useState("");
     const [xabar, setXabar] = useState("");
-
-    const botToken = "8051280711:AAHQUquacleKKN9Pjrm5ADhiY9TU8meKaME";
-    const chatId = "-1002681437689";
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        if (!ism.trim() || !tel.trim() || tgUser.trim() || fikr.trim()) {
-            setXabar("Iltimos barcha maydonlarni toldiring")   
-            };
-            
-
-        const message = `📝 *Yangi murojaat!* \n\n👤 Ism: ${ism}\n📞 Telefon: ${tel}\n💬 Telegram: ${tgUser}\n✍️ Fikr: ${fikr}`;
-        
-        const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-        
-        await fetch(url, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                chat_id: chatId,
-                text: message,
-                parse_mode: "Markdown"
-            })
-        });
-
-        setXabar("✅ Sizning sharhingiz qabul qilindi!");
-
-        setIsm("");
-        setTel("");
-        setTgUser("");
-        setFikr("");
-
-        setTimeout(() => setXabar(""), 3000);
+  
+    const formatPhoneNumber = (value) => {
+      let x = value.replace(/\D/g, "").slice(3);
+      
+      let formatted = "+998";
+      if (x.length > 0) formatted += ` (${x.substring(0, 2)}`;
+      if (x.length > 2) formatted += `) ${x.substring(2, 5)}`;
+      if (x.length > 5) formatted += `-${x.substring(5, 7)}`;
+      if (x.length > 7) formatted += `-${x.substring(7, 9)}`;
+      
+      return formatted;
     };
-
+  
+    const handleChange = (e) => {
+      let rawValue = e.target.value.replace(/\D/g, "");
+      
+      if (rawValue.length > 12) {
+        rawValue = rawValue.slice(0, 12);
+      }
+      
+      setPhone(formatPhoneNumber(rawValue));
+    };
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+  
+      if (!ism.trim() || !phone.trim() || !fikr.trim()) {
+        setXabar("Iltimos barcha maydonlarni to‘ldiring");
+        return;
+      }
+      
+  
+      const message = `📝 *Yangi murojaat!* \n\n👤 Ism: ${ism}\n📞 Telefon: ${phone}\n💬 Telegram: ${tgUser}\n✍️ Fikr: ${fikr}`;
+      
+      const botToken = "8051280711:AAHQUquacleKKN9Pjrm5ADhiY9TU8meKaME";
+      const chatId = "-1002681437689";
+      const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+      
+      await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: "Markdown"
+        })
+      });
+  
+      setXabar("✅ Sizning sharhingiz qabul qilindi!");
+      setIsm("");
+      setPhone("");
+      setTgUser("");
+      setFikr("");
+  
+      setTimeout(() => setXabar(""), 3000);
+    };
     return (
         <main className='pb-16'>
             <div className='mb-10'>
@@ -76,12 +96,14 @@ const Murojaat = () => {
 
                             <input
                                 className="w-full p-3 rounded-lg border-2 border-gray-300 focus:ring-2 focus:ring-blue-500"
-                                required
-                                pattern="(\+998|8)[\- ]?\d{2}[\- ]?\d{3}[\- ]?\d{2}[\- ]?\d{2}"
-                                placeholder="+998 va Telefon raqamingiz"
-                                type="text"
-                                value={tel}
-                                onChange={(e) => setTel(e.target.value)}
+                                required maxLength={19}
+                                autoComplete="off"
+                                pattern="\+998 \(\d{2}\) \d{3}-\d{2}-\d{2}"
+                                placeholder="+998 (__) ___-__-__"
+                                type="tel"
+                                name='tel'
+                                value={phone}
+                                onChange={handleChange}
                             />
                         </div>
 
