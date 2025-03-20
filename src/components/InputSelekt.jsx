@@ -113,7 +113,7 @@ const InputSelekt = () => {
                     {filteredData[category] ? (
                         <div
                             ref={(el) => (scrollRefs.current[category] = el)}
-                            className="w-full flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-hidden whitespace-nowrap"
+                            className="w-full flex md:grid md:grid-cols-2 lg:grid-cols-3 scroll-smooth overflow-x-scroll gap-4 overflow-hidden whitespace-nowrap"
                         >
                             {filteredData[category]?.map((item) => (
                                 <div
