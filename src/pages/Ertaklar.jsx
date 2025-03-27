@@ -9,7 +9,6 @@ const Ertaklar = () => {
     return (
         <main className='bg-gradient-to-b from-white to-green-50 pb-16'>
             <Helmet>
-                <title>Ertaklar || Yulduzli bolalar</title>
                 <link rel="canonical" href="https://yuldizlibolalar.vercel.app/ertaklar" />
                 <meta name="description" content="Yulduzli bolalar ertaklar sahifasida bolalar uchun qiziqarli va quvnoq bolgan ertaklarni korishi mumkin ." />
             </Helmet>

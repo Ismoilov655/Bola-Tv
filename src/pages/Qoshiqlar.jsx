@@ -8,7 +8,6 @@ const Qoshiqlar = () => {
         <main className='bg-gradient-to-b from-white to-green-50 pb-16 '>
 
             <Helmet>
-                <title>Qo'shiqlar || Yulduzli bolalar</title>
                 <link rel="canonical" href="https://yuldizlibolalar.vercel.app/qoshiqlar" />
                 <meta name="description" content="Yulduzli bolalar qoshiqlar sahifasida bolalar uchun qiziqarli qo'shiqlar mavjud." />
             </Helmet>

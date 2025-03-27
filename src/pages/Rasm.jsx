@@ -9,7 +9,6 @@ const Rasm = () => {
     return (
         <main className='bg-gradient-to-b from-white to-green-50 pb-16 '>
             <Helmet>
-                <title>Rasm || Yulduzli bolalar</title>
                 <link rel="canonical" href="https://yuldizlibolalar.vercel.app/rasm" />
                 <meta name="description" content="Yulduzli bolalar rasm sahifasida bolalar uchun turli xil rasmlarni chizishni orqanishimiz mumkin." />
             </Helmet>

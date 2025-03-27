@@ -11,7 +11,6 @@ const Multfilm = () => {
     return (
         <main className='bg-gradient-to-b from-white to-green-50 pb-16'>
             <Helmet>
-                <title>Multfilmlar || Yulduzli bolalar</title>
                 <link rel="canonical" href="https://yuldizlibolalar.vercel.app/multfilmlar" />
                 <meta name="description" content="Yulduzli bolalar multfilmlar sahifasida bolalar uchun qiziqarli quvnoq multfilmlarni korishlari mumkin." />
             </Helmet>

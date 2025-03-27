@@ -8,7 +8,6 @@ const Badantarbiya = () => {
     return (
         <main className='bg-gradient-to-b from-white to-green-50 pb-16 '>
             <Helmet>
-                <title>Badantarbiya || Yulduzli bolalar</title>
                 <link rel="canonical" href="https://yuldizlibolalar.vercel.app/badantarbiya" />
                 <meta name="description" content="Yulduzli bolalar badantarbiya sahifasida bolalar uchun qiziqarli mashiqlar to‘plami mavjud." />
             </Helmet>

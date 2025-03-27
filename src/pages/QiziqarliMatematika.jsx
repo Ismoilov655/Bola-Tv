@@ -9,7 +9,6 @@ const QiziqarliMatematika = () => {
     return (
         <main className='bg-gradient-to-b from-white to-green-50 pb-16'>
             <Helmet>
-                <title>Qiziqarli matematika|| Yulduzli bolalar</title>
                 <link rel="canonical" href="https://yuldizlibolalar.vercel.app/matematika" />
                 <meta name="description" content="Yulduzli bolalar qiziqarli matematika sahifasida bolalar uchun qiziqarli misollar va mashqlar mavjud." />
             </Helmet>

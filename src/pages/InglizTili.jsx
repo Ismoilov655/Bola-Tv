@@ -9,7 +9,6 @@ const InglizTili = () => {
     <main className='bg-gradient-to-b from-white to-green-50 pb-16'>
 
       <Helmet>
-        <title>Ingliz tili || Yulduzli bolalar</title>
         <link rel="canonical" href="https://yuldizlibolalar.vercel.app/ingliztili" />
         <meta name="description" content="Yulduzli bolalar inliz tili sahifasida bolalar uchun ingliz tili darslari va qo'shiqlari  mavjud." />
       </Helmet>
