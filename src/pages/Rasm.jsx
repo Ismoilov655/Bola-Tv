@@ -3,10 +3,16 @@ import React from 'react'
 // img
 import hero from '../img/hero.jpg'
 import InputSelekt from '../components/InputSelekt'
+import { Helmet } from 'react-helmet'
 
 const Rasm = () => {
     return (
         <main className='bg-gradient-to-b from-white to-green-50 pb-16 '>
+            <Helmet>
+                <title>Rasm || Yulduzli bolalar</title>
+                <link rel="canonical" href="https://yuldizlibolalar.vercel.app/rasm" />
+                <meta name="description" content="Yulduzli bolalar rasm sahifasida bolalar uchun turli xil rasmlarni chizishni orqanishimiz mumkin." />
+            </Helmet>
             <div className='mb-5'>
                 <div className='relative w-full'>
                     <img className='w-full h-36 md:h-56' src={hero} alt="hero img" />
@@ -14,8 +20,8 @@ const Rasm = () => {
                 </div>
             </div>
 
-            <InputSelekt/>
-            
+            <InputSelekt />
+
         </main>
     )
 }
